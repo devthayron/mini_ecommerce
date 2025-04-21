@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+</head>
+<body>
+    <h1>Produtos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Produto</th>
+                <th>Preco</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if produtos %} <!-- Verifica se existem produtos cadastrados-->
+                {% for item in produtos %}
+                <tr>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.nome }}</td>
+                    <td>R$ {{ item.preco }}</td>
+                    <td>{{ item.descricao }}</td>         
+                </tr>
+                {% endfor %}
+            {% else %}
+                <!-- Caso não existam produtos cadastrados, exibe esta mensagem -->
+                <tr>
+                    <td colspan="4">Nenhum produto cadastrado.</td> <!-- O colspan é para a mensagem ocupar toda as '4' linha -->
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+</body>
+</html>
