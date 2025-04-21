@@ -1,30 +1,31 @@
 ## 🛒 **E-commerce Django**
 
-Projeto de e-commerce simples feito com **Django**, com foco em gestão de produtos e funcionalidades básicas.
+E-commerce simples feito com Django, criado como parte da minha jornada de aprendizado em desenvolvimento web com Python.  
+Vou ajustando e melhorando conforme evoluo e adquiro mais experiência.
 
 ---
 
 ### 🚀 **Iniciando o Projeto**
 
 1. **Clone o repositório:**
-   ```bash
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
-   cd nome-do-repositorio
+   ```
+   git clone https://github.com/devthayron/mini_ecommerce.git
+   cd mini_ecommerce
    ```
 
-2. **Crie um ambiente virtual e ative:**
-   ```bash
-   virtualenv venv
-   venv\Scripts\activate  # no Windows
+2. **Crie e ative o ambiente virtual:**
+   ```
+   python -m venv venv
+   venv\Scripts\activate  # Windows
    ```
 
 3. **Instale as dependências:**
-   ```bash
+   ```
    pip install -r requirements.txt
    ```
 
-4. **Rodar o servidor:**
-   ```bash
+4. **Execute o servidor de desenvolvimento:**
+   ```
    python manage.py runserver
    ```
 
@@ -32,18 +33,21 @@ Projeto de e-commerce simples feito com **Django**, com foco em gestão de produ
 
 ### ⚙️ **Funcionalidades**
 
-- Exibição de produtos disponíveis.
-- Interface de administração para gerenciar produtos.
-- Filtro de disponibilidade.
+- Listagem de produtos disponíveis  
+- Filtro de disponibilidade  
+- Painel administrativo para gerenciamento de produtos  
 
 ---
 
-### 📝 **Tecnologias Usadas**
+### 🛠️ **Tecnologias Utilizadas**
 
-- **Django** (backend)
-- **Python**
+- **Django** (backend)  
+- **Python**  
 - **SQLite**
 
 ---
 
-Esse é um modelo mais direto. Você pode ir ajustando conforme o projeto cresce e evolui!
+Este projeto está em constante evolução.  
+Cada funcionalidade adicionada representa uma nova etapa no meu processo de aprendizado e prática com Django.
+
+---
