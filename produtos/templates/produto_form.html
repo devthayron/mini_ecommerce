@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}{% if object %}Editar Produto{% else %}Adicionar Produto{% endif %} - E-commerce Django{% endblock %}
+{% block content %}
+    <h2>{% if object %}Editar {{ object.nome }}{% else %}Adicionar produto{% endif %}</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">
+            {% if object %}Atualizar{% else %}Salvar{% endif %}        
+        </button>
+    </form>
+    <p>
+        <a href="{% url 'index' %}">Voltar para lista</a>
+    </p>
+{% endblock %}

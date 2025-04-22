@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produtos</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}Produtos - E-commerce Django{% endblock %}
+
+{% block content %}
     <h1>Produtos</h1>
     <table>
         <thead>
@@ -14,6 +10,7 @@
                 <th>Produto</th>
                 <th>Preco</th>
                 <th>Descrição</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -23,16 +20,22 @@
                     <td>{{ item.id }}</td>
                     <td>{{ item.nome }}</td>
                     <td>R$ {{ item.preco }}</td>
-                    <td>{{ item.descricao }}</td>         
+                    <td>{{ item.descricao }}</td>
+                    <td>
+                        <a href="{% url 'editar_produto' item.id %}">Editar</a>
+                        <a href="{% url 'del_produto' item.id %}">Deletar</a>
+                    </td>       
                 </tr>
                 {% endfor %}
             {% else %}
                 <!-- Caso não existam produtos cadastrados, exibe esta mensagem -->
                 <tr>
-                    <td colspan="4">Nenhum produto cadastrado.</td> <!-- O colspan é para a mensagem ocupar toda as '4' linha -->
+                    <td colspan="5">Nenhum produto cadastrado.</td> <!-- O colspan é para a mensagem ocupar toda as '5' linha -->
                 </tr>
             {% endif %}
         </tbody>
     </table>
-</body>
-</html>
+    <p>
+        <a href="{% url 'add_produto' %}">Adicionar mais Produto</a>
+    </p>
+{% endblock %}
