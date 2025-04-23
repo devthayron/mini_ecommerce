@@ -39,20 +39,30 @@ O projeto está em constante evolução, sendo ajustado e melhorado conforme eu 
   - **Criar:** Página para adicionar novos produtos ao sistema.
   - **Editar:** Página para editar as informações de produtos existentes.
   - **Deletar:** Opção para excluir produtos do sistema.
-- **Painel Administrativo:** Utiliza a interface de administração do Django para gerenciar produtos.
-- Layout centralizado com `base.html` para reutilização de código em múltiplas páginas
+- **Upload de imagem de produto:** Permite o envio e exibição de imagens dos produtos.
+- **Integração com Bootstrap 5:**
+  - Layout responsivo e moderno com Bootstrap.
+  - Ícones com Bootstrap Icons.
+- **Formulários com Crispy Forms:** Renderização elegante de formulários usando o template pack do Bootstrap 5.
+- **Painel Administrativo:** Interface administrativa nativa do Django para gerenciar produtos.
+
 ---
 
 ### 🛠️ **Tecnologias Utilizadas**
 
-- **Django** (backend)
+#### 🔙 Backend
+- **Django**
 - **Python**
-- **SQLite** (banco de dados)
-- **HTML/CSS** (frontend)
+- **SQLite**
+- **Pillow** (manipulação de imagens)
+
+#### 🎨 Frontend
+- **HTML5 / CSS3**
+- **Bootstrap 5**
+- **Bootstrap Icons**
+- **Crispy Forms** com template pack `bootstrap5`
 
 ---
 
 Este projeto está em constante evolução.  
 Cada funcionalidade adicionada representa uma nova etapa no meu processo de aprendizado e prática com Django.
-
----

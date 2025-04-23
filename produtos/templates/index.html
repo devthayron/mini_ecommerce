@@ -1,41 +1,64 @@
 {% extends 'base.html' %}
+
 {% block title %}Produtos - E-commerce Django{% endblock %}
 
 {% block content %}
-    <h1>Produtos</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Produto</th>
-                <th>Preco</th>
-                <th>Descrição</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% if produtos %} <!-- Verifica se existem produtos cadastrados-->
-                {% for item in produtos %}
-                <tr>
-                    <td>{{ item.id }}</td>
-                    <td>{{ item.nome }}</td>
-                    <td>R$ {{ item.preco }}</td>
-                    <td>{{ item.descricao }}</td>
-                    <td>
-                        <a href="{% url 'editar_produto' item.id %}">Editar</a>
-                        <a href="{% url 'del_produto' item.id %}">Deletar</a>
-                    </td>       
-                </tr>
-                {% endfor %}
-            {% else %}
-                <!-- Caso não existam produtos cadastrados, exibe esta mensagem -->
-                <tr>
-                    <td colspan="5">Nenhum produto cadastrado.</td> <!-- O colspan é para a mensagem ocupar toda as '5' linha -->
-                </tr>
-            {% endif %}
-        </tbody>
-    </table>
-    <p>
-        <a href="{% url 'add_produto' %}">Adicionar mais Produto</a>
-    </p>
+<div class="container mt-4">
+    <div class="card shadow-sm border-0">
+        <div class="card-body">
+            <h1 class="h4 mb-4">Lista de Produtos</h1>
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Produto</th>
+                            <th scope="col">Preço</th>
+                            <th scope="col">Imagem</th>
+                            <th scope="col">Descrição</th>
+                            <th scope="col">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% if produtos %}
+                            {% for item in produtos %}
+                            <tr>
+                                <td scope="row">{{ item.id }}</td>
+                                <td>{{ item.nome }}</td>
+                                <td>R$ {{ item.preco }}</td>
+                                <td>
+                                    {% if item.imagem %}
+                                        <img src="{{ item.imagem.url }}" alt="{{ item.nome }}" width="100">
+                                    {% else %}
+                                        <span>Nenhuma imagem</span>
+                                    {% endif %}
+                                </td>
+                                <td>{{ item.descricao }}</td>
+                                <td>
+                                    <a href="{% url 'editar_produto' item.id %}" class="btn btn-outline-primary btn-sm">
+                                        <i class="bi bi-pencil"></i> Editar
+                                    </a>
+                                    <a href="{% url 'del_produto' item.id %}" class="btn btn-outline-danger btn-sm">
+                                        <i class="bi bi-trash"></i> Deletar
+                                    </a>
+                                    
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        {% else %}
+                            <tr>
+                                <td colspan="6" class="text-center text-muted">Nenhum produto cadastrado.</td>
+                            </tr>
+                        {% endif %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="text-end">
+                <a href="{% url 'add_produto' %}" class="btn btn-success btn-sm">
+                    <i class="bi bi-plus-circle"></i> Adicionar Produto
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
