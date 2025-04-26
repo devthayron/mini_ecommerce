@@ -9,9 +9,11 @@ class IndexListView(ListView):
     template_name = 'index.html'
     model = Produto
     context_object_name = 'produtos'
+    paginate_by = 3
 
     def get_queryset(self):
-        return Produto.objects.filter(disponivel=True)  # Mostra apenas os Produtos disponiveis.
+        return Produto.objects.filter(disponivel=True).order_by('-preco')  # Mostra apenas os Produtos disponiveis.
+    
 
 class CriarProdutoView(CreateView):
     template_name = 'produto_form.html'

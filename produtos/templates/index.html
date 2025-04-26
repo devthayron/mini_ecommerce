@@ -28,7 +28,7 @@
                                 <td>R$ {{ item.preco }}</td>
                                 <td>
                                     {% if item.imagem %}
-                                        <img src="{{ item.imagem.url }}" alt="{{ item.nome }}" width="100">
+                                        <img src="{{ item.imagem.url }}" alt="{{ item.nome }}" width="100" height="100">
                                     {% else %}
                                         <span>Nenhuma imagem</span>
                                     {% endif %}
@@ -61,4 +61,6 @@
         </div>
     </div>
 </div>
+{% include 'paginacao.html' %}
+
 {% endblock %}
