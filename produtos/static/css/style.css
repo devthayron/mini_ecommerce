@@ -1,0 +1,5 @@
+.alert-error {
+    background-color: #f8d7da; /* Vermelho claro */
+    border-color: #f5c6cb;     /* Vermelho mais forte */
+    color: #721c24;             /* Texto vermelho escuro */
+}
