@@ -3,6 +3,7 @@ from .views import IndexListView,CriarProdutoView,EditarProdutoView,DeleteProdut
 from django.conf.urls.static import static
 from django.conf import settings
 
+
 urlpatterns = [
     path('',IndexListView.as_view(),name='index'),
     path('add/',CriarProdutoView.as_view(),name='add_produto'),
