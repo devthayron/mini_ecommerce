@@ -21,16 +21,19 @@
 
                 <!-- Renderizando os campos do form com crispy_forms -->
                 <div class="mb-3">
-                    {{ form.nome|as_crispy_field }}
+                    {{ form.imagem|as_crispy_field }}
                 </div>
                 <div class="mb-3">
-                    {{ form.imagem|as_crispy_field }}
+                    {{ form.categoria|as_crispy_field }}
+                </div>
+                <div class="mb-3">
+                    {{ form.nome|as_crispy_field }}
                 </div>
                 <div class="mb-3">
                     {{ form.preco|as_crispy_field }}
                 </div>
                 <div class="mb-3">
-                    {{ form.descricao|as_crispy_field }}
+                    {{ form.quantidade|as_crispy_field }}
                 </div>
                 <div class="mb-3">
                     {{ form.disponivel|as_crispy_field }}
